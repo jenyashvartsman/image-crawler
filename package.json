@@ -6,7 +6,8 @@
     "start:frontend": "nx serve frontend",
     "start:backend": "nx serve backend",
     "build:frontend": "nx build frontend",
-    "build:backend": "nx build backend"
+    "build:backend": "nx build backend",
+    "graph": "nx graph"
   },
   "private": true,
   "devDependencies": {

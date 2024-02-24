@@ -8,6 +8,9 @@ npm run start:frontend
 
 # backend
 npm run start:backend
+
+# graph
+npm run graph
 ```
 
 ## build
