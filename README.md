@@ -5,6 +5,9 @@
 ```
 # frontend
 npm run start:frontend
+
+# backend
+npm run start:backend
 ```
 
 ## build
@@ -12,4 +15,7 @@ npm run start:frontend
 ```
 # frontend
 npm run build:frontend
+
+# backend
+npm run build:backend
 ```
