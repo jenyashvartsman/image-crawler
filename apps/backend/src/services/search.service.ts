@@ -6,7 +6,6 @@ const search = async (
   query: string
 ): Promise<any> => {
   const searchEngineUrl = getEngineUrl(engine, query);
-  console.log(searchEngineUrl);
   const images = getImages(searchEngineUrl);
   return images;
 };
