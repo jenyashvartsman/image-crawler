@@ -1,8 +1,21 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './image-card.module.scss';
+import { ImageDto } from '@image-crawler/dto';
+import { Card, CardMedia } from '@mui/material';
 
-const ImageCard = () => {
-  return <div>Image card</div>;
+type ImageCardProps = {
+  image: ImageDto;
+};
+
+const ImageCard = ({ image }: ImageCardProps) => {
+  return (
+    <Card>
+      <CardMedia
+        component="img"
+        alt={image.alt || ''}
+        height="250"
+        image={image.url}
+      />
+    </Card>
+  );
 };
 
 export default ImageCard;

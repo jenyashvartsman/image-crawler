@@ -10,7 +10,7 @@ const search = async (engine: string, query: string): Promise<any> => {
 const getEngineUrl = (engine: string, query: string): string => {
   switch (engine) {
     case 'google':
-      return `https://www.google.com/search?q=cats&sca_esv=302ce67c0d679abb&hl=en&tbm=isch&sxsrf=ACQVn0_1RF-K1qlcNj7cjWpU1zp-Ti2KZg%3A1709404750391&source=hp&biw=1920&bih=911&ei=TnLjZaX6FYbbptQPjMKCuAQ&iflsig=ANes7DEAAAAAZeOAXvVPobCwM_v0bL1yLvL9kstojPBF&oq=${query}&gs_lp=EgNpbWciA2NhdCoCCAAyBBAjGCcyBBAjGCcyCBAAGIAEGLEDMgUQABiABDIIEAAYgAQYsQMyCBAAGIAEGLEDMggQABiABBixAzIOEAAYgAQYigUYsQMYgwEyCBAAGIAEGLEDMgUQABiABEjNDVC3AVisBXABeACQAQCYAT6gAa4BqgEBM7gBA8gBAPgBAYoCC2d3cy13aXotaW1nmAIEoAK9AagCCsICBxAjGOoCGCeYAwiSBwE0&sclient=img`;
+      return `https://www.google.com/search?sca_esv=5fc34e200fc361ee&sxsrf=ACQVn0-CFizFMnupn_JVCB_OlhLS-w5aXA:1709493257776&q=${query}&tbm=isch&source=lnms&sa=X&ved=2ahUKEwi4nIDT5tiEAxXyGFkFHYD4AhUQ0pQJegQIExAB&biw=1920&bih=911`;
     case 'yahoo':
       return `https://images.search.yahoo.com/search/images;_ylt=AwrFGp44ZNplO5IKyQtXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=${query}&fr2=piv-web&fr=yfp-t`;
     case 'bing':

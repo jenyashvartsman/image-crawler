@@ -54,6 +54,7 @@ const SearchQuery = ({ handleSearch }: SearchQueryProps) => {
           <Button
             variant="outlined"
             onClick={() => handleSearch(searchQuery, searchEngine)}
+            disabled={!searchQuery}
             fullWidth
           >
             Search
