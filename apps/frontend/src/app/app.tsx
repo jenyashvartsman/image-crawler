@@ -1,18 +1,22 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useState } from 'react';
 import styles from './app.module.scss';
 import ImageGrid from './components/image-grid/ImageGrid';
 import SearchQuery from './components/search-query/SearchQuery';
-import useFetch from './hooks/useFetch';
 import { ImageDto } from '@image-crawler/dto';
+import { searchImages } from './services/search.service';
 
 const App = () => {
-  const { data } = useFetch<ImageDto[]>(
-    'http://localhost:3000/search/yahoo/cats'
-  );
+  const [images, setImages] = useState<ImageDto[]>([]);
+
+  const handleSearch = async (query: string, engine: string) => {
+    const images = await searchImages(engine, query);
+    setImages(images);
+  };
 
   return (
-    <main>
-      <SearchQuery />
+    <main className={styles.app}>
+      <SearchQuery handleSearch={handleSearch} />
       <ImageGrid />
     </main>
   );

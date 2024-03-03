@@ -3,4 +3,7 @@ export type ImageDto = {
   alt?: string;
 };
 
-export type SearchEngineType = 'google' | 'yahoo' | 'bing' | 'duckduckgo';
+export type SearchQueryDto = {
+  engine: string;
+  query: string;
+};

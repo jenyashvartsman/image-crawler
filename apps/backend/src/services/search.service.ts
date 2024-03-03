@@ -1,16 +1,13 @@
 import * as cheerio from 'cheerio';
-import { ImageDto, SearchEngineType } from '@image-crawler/dto';
+import { ImageDto } from '@image-crawler/dto';
 
-const search = async (
-  engine: SearchEngineType,
-  query: string
-): Promise<any> => {
+const search = async (engine: string, query: string): Promise<any> => {
   const searchEngineUrl = getEngineUrl(engine, query);
   const images = getImages(searchEngineUrl);
   return images;
 };
 
-const getEngineUrl = (engine: SearchEngineType, query: string): string => {
+const getEngineUrl = (engine: string, query: string): string => {
   switch (engine) {
     case 'google':
       return `https://www.google.com/search?q=cats&sca_esv=302ce67c0d679abb&hl=en&tbm=isch&sxsrf=ACQVn0_1RF-K1qlcNj7cjWpU1zp-Ti2KZg%3A1709404750391&source=hp&biw=1920&bih=911&ei=TnLjZaX6FYbbptQPjMKCuAQ&iflsig=ANes7DEAAAAAZeOAXvVPobCwM_v0bL1yLvL9kstojPBF&oq=${query}&gs_lp=EgNpbWciA2NhdCoCCAAyBBAjGCcyBBAjGCcyCBAAGIAEGLEDMgUQABiABDIIEAAYgAQYsQMyCBAAGIAEGLEDMggQABiABBixAzIOEAAYgAQYigUYsQMYgwEyCBAAGIAEGLEDMgUQABiABEjNDVC3AVisBXABeACQAQCYAT6gAa4BqgEBM7gBA8gBAPgBAYoCC2d3cy13aXotaW1nmAIEoAK9AagCCsICBxAjGOoCGCeYAwiSBwE0&sclient=img`;

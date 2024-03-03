@@ -1,12 +1,10 @@
 import express, { Request, Response } from 'express';
 import { search } from '../services/search.service';
-import { SearchEngineType } from '@image-crawler/dto';
 
 const router = express.Router();
 
 router.get('/:engine/:query', async (req: Request, res: Response) => {
-  const query = req.params.query;
-  const engine: SearchEngineType = <SearchEngineType>req.params.engine;
+  const { query, engine } = req.params;
 
   try {
     const images = await search(engine, query);
